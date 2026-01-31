@@ -61,7 +61,7 @@ pub fn prevent_user_idle_system_sleep() -> Result<bool, &'static str> {
 
         number
             .to_i64()
-            .map(|v| v == 1)
+            .map(|v| v > 0)
             .ok_or("Failed to convert CFNumber")
     }
 }
